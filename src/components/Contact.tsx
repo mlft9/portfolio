@@ -4,7 +4,7 @@ import './Contact.css';
 interface ContactInfo {
   email: string;
   linkedin?: string;
-  gitea?: string;
+  github?: string;
   twitter?: string;
 }
 
@@ -30,14 +30,9 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                 <span>💼</span> LinkedIn
               </a>
             )}
-            {contactInfo.gitea && (
-              <a href={contactInfo.gitea} target="_blank" rel="noopener noreferrer" className="contact-link">
-                <span>💻</span> Gitea
-              </a>
-            )}
-            {contactInfo.twitter && (
-              <a href={contactInfo.twitter} target="_blank" rel="noopener noreferrer" className="contact-link">
-                <span>🐦</span> Twitter
+            {contactInfo.github && (
+              <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="contact-link">
+                <span>💻</span> GitHub
               </a>
             )}
           </div>

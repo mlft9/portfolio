@@ -43,7 +43,7 @@ export const portfolioData = {
         "Let's Encrypt",
         "Base de données SQL",
       ],
-      github: "https://gitea.maximelefort.fr/maxime/projet-etude-chatbot",
+      github: "https://github.com/mlft9/chatbot",
     },
     {
       title: "Recréation self-hostée de GeoGuessr",
@@ -51,7 +51,7 @@ export const portfolioData = {
         "Déploiement d’une version self-hostée du jeu GeoGuessr, avec un backend Node.js/Express pour gérer les appels API Google Maps (Street View, géolocalisation, scoring) et un frontend React. L’ensemble tourne avec un reverse-proxy NGINX, le tout sécurisé, isolé et documenté pour un déploiement clean sur mon homelab.",
 
       technologies: ["NextJS", "Express", "NodeJS", "Google Maps API", "NGINX"],
-      github: "https://gitea.maximelefort.fr/maxime/geoguessr-fr",
+      github: "https://github.com/mlft9/geoguessr-fr",
     },
   ],
 
@@ -100,6 +100,6 @@ export const portfolioData = {
   contact: {
     email: "maxime.lefort@etik.com",
     linkedin: "https://www.linkedin.com/in/maxlft/",
-    gitea: "https://gitea.maximelefort.fr/maxime",
+    github: "https://github.com/mlft9",
   },
 };
