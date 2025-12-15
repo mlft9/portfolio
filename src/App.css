@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 80px; /* Espace pour le header fixe */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding-top: 120px;
+  }
+}

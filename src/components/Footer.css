@@ -1,0 +1,18 @@
+.footer {
+  background: var(--color-white);
+  border-top: 3px solid var(--color-yellow);
+  padding: var(--spacing-lg);
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  color: var(--color-text-gray);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

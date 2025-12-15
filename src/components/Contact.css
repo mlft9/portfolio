@@ -1,0 +1,109 @@
+.contact {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xl) 3rem;
+  background: var(--color-blue);
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.contact-container .section-title {
+  color: var(--color-white);
+  text-align: center;
+}
+
+.contact-container .section-title::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  margin-top: var(--spacing-lg);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: all var(--animation-duration) var(--animation-timing);
+  min-width: 320px;
+  justify-content: center;
+  opacity: 0;
+  animation: slideInLeft 0.6s ease-out forwards;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+.contact-link:nth-child(1) { animation-delay: 0.4s; }
+.contact-link:nth-child(2) { animation-delay: 0.5s; }
+.contact-link:nth-child(3) { animation-delay: 0.6s; }
+.contact-link:nth-child(4) { animation-delay: 0.7s; }
+
+.contact-link:hover {
+  background: var(--color-yellow);
+  color: var(--color-text-dark);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 229, 0, 0.4);
+}
+
+.contact-link span {
+  font-size: 1.5rem;
+  transition: transform var(--animation-duration) ease;
+}
+
+.contact-link:hover span {
+  transform: scale(1.15);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-link {
+    min-width: 250px;
+  }
+}

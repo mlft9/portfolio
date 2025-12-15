@@ -1,0 +1,18 @@
+# Robots.txt - Portfolio Maxime Lefort
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://maximelefort.fr/sitemap.xml
+
+# Interdire l'indexation des fichiers techniques
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.map$
+
+# Autoriser l'accès aux ressources
+Allow: /assets/
+Allow: /projects/
+Allow: /*.css$
+Allow: /*.js$
