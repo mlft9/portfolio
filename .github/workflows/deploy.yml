@@ -1,0 +1,21 @@
+name: Deploy Portfolio
+
+# Se déclenche uniquement sur un push sur la branche main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted # C'est ici qu'on cible ton runner
+    steps:
+      - name: Mise à jour des fichiers
+        run: |
+          cd /opt/portfolio
+          git pull origin main
+
+      - name: Relancer Docker
+        run: |
+          cd /opt/portfolio
+          docker compose up -d --build
