@@ -19,7 +19,7 @@ export const portfolioData = {
     {
       title: "Homelab Proxmox — Prod maison blindée & scalable",
       description:
-        "Montage d’un homelab béton autour de Proxmox VE : cluster mono-nœud, LXC/VM optimisés, stockage ZFS, accès distant via WireGuard et Cloudflare Tunnel. L’infra héberge mes services critiques : Nextcloud, Vaultwarden, Pterodactyl, monitoring, reverse proxy, Wazuh, GitOps maison… Le tout durci, documenté, supervisé et pensé pour tenir en prod H24.",
+        "Montage d'un homelab béton autour de Proxmox VE : cluster mono-nœud, LXC/VM optimisés, stockage ZFS, accès distant via WireGuard et Cloudflare Tunnel. L'infra héberge mes services critiques : Nextcloud, Vaultwarden, Pterodactyl, monitoring, reverse proxy, Wazuh, GitOps maison… Le tout durci, documenté, supervisé et pensé pour tenir en prod H24.",
       technologies: [
         "Proxmox VE",
         "Virtualisation KVM / LXC",
@@ -29,6 +29,21 @@ export const portfolioData = {
         "WireGuard VPN",
       ],
       detailId: "homelab",
+      status: "completed",
+    },
+    {
+      title: "Création Active Directory — Lycée (Virtualisation Proxmox)",
+      description:
+        "Création complète de l'infrastructure Active Directory d'un établissement scolaire : Windows Server 2022, déploiement de GPO avancées, optimisation DNS/DHCP, et automatisation PowerShell. Une AD moderne, sécurisée, documentée et scalable pour gérer les élèves, les profs et les administrateurs en toute stabilité.",
+      technologies: [
+        "Windows Server 2022",
+        "Active Directory",
+        "Group Policy (GPO)",
+        "DNS / DHCP",
+        "PowerShell",
+      ],
+      detailId: "windowsad",
+      status: "in-progress",
     },
     {
       title:
@@ -44,14 +59,16 @@ export const portfolioData = {
         "Base de données SQL",
       ],
       github: "https://github.com/mlft9/chatbot",
+      status: "completed",
     },
     {
       title: "Recréation self-hostée de GeoGuessr",
       description:
-        "Déploiement d’une version self-hostée du jeu GeoGuessr, avec un backend Node.js/Express pour gérer les appels API Google Maps (Street View, géolocalisation, scoring) et un frontend React. L’ensemble tourne avec un reverse-proxy NGINX, le tout sécurisé, isolé et documenté pour un déploiement clean sur mon homelab.",
+        "Déploiement d'une version self-hostée du jeu GeoGuessr, avec un backend Node.js/Express pour gérer les appels API Google Maps (Street View, géolocalisation, scoring) et un frontend React. L'ensemble tourne avec un reverse-proxy NGINX, le tout sécurisé, isolé et documenté pour un déploiement clean sur mon homelab.",
 
       technologies: ["NextJS", "Express", "NodeJS", "Google Maps API", "NGINX"],
       github: "https://github.com/mlft9/geoguessr-fr",
+      status: "completed",
     },
   ],
 
@@ -99,7 +116,10 @@ export const portfolioData = {
   // Informations de contact
   contact: {
     email: "maxime.lefort@etik.com",
-    linkedin: "https://www.linkedin.com/in/maxlft/",
+    linkedin: "www.linkedin.com/in/maximelft",
     github: "https://github.com/mlft9",
   },
+
+  // Dernière mise à jour
+  lastUpdate: "29 janvier 2026",
 };

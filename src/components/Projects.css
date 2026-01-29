@@ -34,6 +34,11 @@
   opacity: 0;
   animation: fadeInScale 0.6s ease-out forwards;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 600px;
 }
 
 .project-card:nth-child(1) { animation-delay: 0.1s; }
@@ -81,6 +86,9 @@
 
 .project-content {
   padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-content h3 {
@@ -90,6 +98,32 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  padding-right: 90px;
+}
+
+.project-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-status.completed {
+  background: rgba(16, 185, 129, 0.9);
+  color: white;
+}
+
+.project-status.in-progress {
+  background: rgba(245, 158, 11, 0.9);
+  color: white;
 }
 
 .project-content p {
@@ -97,6 +131,11 @@
   line-height: 1.6;
   margin-bottom: var(--spacing-sm);
   font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-technologies {
@@ -129,6 +168,7 @@
 .project-links {
   display: flex;
   gap: var(--spacing-sm);
+  margin-top: auto;
 }
 
 .project-link {

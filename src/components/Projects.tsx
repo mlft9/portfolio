@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProjectDetail from './ProjectDetail';
 import { homelabProject } from '../data/homelabProject';
+import { windowsAdProject } from '../data/windowsAdProject';
 import './Projects.css';
 
 interface Project {
@@ -11,6 +12,7 @@ interface Project {
   github?: string;
   image?: string;
   detailId?: string;
+  status?: 'completed' | 'in-progress';
 }
 
 interface ProjectsProps {
@@ -19,6 +21,13 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+  // Trier les projets : projets terminés d'abord, projets en cours à la fin
+  const sortedProjects = [...projects].sort((a, b) => {
+    if (a.status === 'in-progress' && b.status !== 'in-progress') return 1;
+    if (a.status !== 'in-progress' && b.status === 'in-progress') return -1;
+    return 0;
+  });
 
   const handleProjectClick = (detailId?: string) => {
     if (detailId) {
@@ -35,8 +44,13 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       <div className="projects-container">
         <h2 className="section-title">Mes Projets</h2>
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <div key={index} className="project-card">
+              {project.status && (
+                <span className={`project-status ${project.status}`}>
+                  {project.status === 'completed' ? 'Terminé' : 'En cours'}
+                </span>
+              )}
               {project.image && (
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
@@ -78,8 +92,14 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
       {/* Modale de détail du projet */}
       {selectedProject === 'homelab' && (
-        <ProjectDetail 
-          project={homelabProject} 
+        <ProjectDetail
+          project={homelabProject}
+          onClose={closeProjectDetail}
+        />
+      )}
+      {selectedProject === 'windowsad' && (
+        <ProjectDetail
+          project={windowsAdProject}
           onClose={closeProjectDetail}
         />
       )}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProjectDetail.css';
 
 interface ProjectDetailData {
@@ -10,6 +10,7 @@ interface ProjectDetailData {
     title: string;
     content: string;
     image?: string;
+    image2?: string;
   }[];
   features?: string[];
   challenges?: string[];
@@ -22,6 +23,8 @@ interface ProjectDetailProps {
 }
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+
   return (
     <div className="project-detail-overlay" onClick={onClose}>
       <div className="project-detail-container" onClick={(e) => e.stopPropagation()}>
@@ -51,9 +54,18 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
           {project.sections.map((section, index) => (
             <section key={index} className="project-section">
               <h2>{section.title}</h2>
-              {section.image && (
-                <div className="section-image">
-                  <img src={section.image} alt={section.title} />
+              {(section.image || section.image2) && (
+                <div className={`section-images ${section.image2 ? 'two-images' : ''}`}>
+                  {section.image && (
+                    <div className="section-image" onClick={() => setZoomedImage(section.image!)}>
+                      <img src={section.image} alt={section.title} />
+                    </div>
+                  )}
+                  {section.image2 && (
+                    <div className="section-image" onClick={() => setZoomedImage(section.image2!)}>
+                      <img src={section.image2} alt={`${section.title} - 2`} />
+                    </div>
+                  )}
                 </div>
               )}
               <p>{section.content}</p>
@@ -97,6 +109,24 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
           )}
         </div>
       </div>
+
+      {/* Image zoom modal */}
+      {zoomedImage && (
+        <div className="image-zoom-overlay" onClick={(e) => {
+          e.stopPropagation();
+          setZoomedImage(null);
+        }}>
+          <div className="image-zoom-container" onClick={(e) => e.stopPropagation()}>
+            <button className="image-zoom-close" onClick={(e) => {
+              e.stopPropagation();
+              setZoomedImage(null);
+            }}>
+              ✕
+            </button>
+            <img src={zoomedImage} alt="Zoom" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
