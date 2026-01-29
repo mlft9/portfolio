@@ -29,7 +29,7 @@ export const portfolioData = {
         "WireGuard VPN",
       ],
       detailId: "homelab",
-      status: "completed",
+      status: "completed" as const,
     },
     {
       title: "Création Active Directory — Lycée (Virtualisation Proxmox)",
@@ -43,7 +43,7 @@ export const portfolioData = {
         "PowerShell",
       ],
       detailId: "windowsad",
-      status: "in-progress",
+      status: "in-progress" as const,
     },
     {
       title:
@@ -59,7 +59,7 @@ export const portfolioData = {
         "Base de données SQL",
       ],
       github: "https://github.com/mlft9/chatbot",
-      status: "completed",
+      status: "completed" as const,
     },
     {
       title: "Recréation self-hostée de GeoGuessr",
@@ -68,7 +68,7 @@ export const portfolioData = {
 
       technologies: ["NextJS", "Express", "NodeJS", "Google Maps API", "NGINX"],
       github: "https://github.com/mlft9/geoguessr-fr",
-      status: "completed",
+      status: "completed" as const,
     },
   ],
 
